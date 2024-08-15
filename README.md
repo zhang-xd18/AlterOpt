@@ -12,7 +12,6 @@ The following requirements need to be installed.
 #### A. Data Preparation
 
 The channel state information (CSI) matrix is generated from the [clustered delay line (CDL)](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3173) model and settings can be found in our paper. 
-% On the other hand, we provide a preprocessed dataset, which we adopt in the paper for testing the performance on avoiding catastrophic forgetting. You can download it from [Google Drive](https://drive.google.com/drive/folders/1yLzVBFR5rv3C_ym0PpDAnLyPOW5hiiCt?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1XDewsqmvFBAHNCoYtJVwwg) with the password: swgm.
 
 #### B. Project Tree Arrangement
 
@@ -35,7 +34,7 @@ home
 ...
 ```
 
-A example of 'run.sh' is provided in the repository.
+Before training the network, you need to arrange the dataset as abovementioned. After that, a example of 'run.sh' is provided in the repository. The training procedure can be easily operated by 'bash run.sh'.
 
 ## Acknowledgment
 
