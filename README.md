@@ -11,7 +11,7 @@ The following requirements need to be installed.
 
 #### A. Data Preparation
 
-The channel state information (CSI) matrix is generated from the [clustered delay line (CDL)](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3173) model and settings can be found in our paper. 
+The channel state information (CSI) matrix is generated from the [clustered delay line (CDL)](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3173) model and settings can be found in our paper.  
 
 #### B. Checkpoint and results downloading
 The pretrained checkpoint used for online updating is provided in the "codes/pretrained" diectory along with the repository.
@@ -40,8 +40,7 @@ home
 
 We test the performance of the alternating optimization method on both the CDL channel datasets. The results are presented as follows. 
 ##### Performance on the CDL dataset
-All the results can be found in Figure 5 of our paper, which is also attached as CDL.jpg in the `results` directory.
-
+All the results can be found in Figure 5 of our paper, which is also attached as CDL.png in the 'results' directory.
 
 ##### Reproduction
 Before training the network, you need to arrange the dataset as abovementioned. After that, an example of `run.sh` is provided in the repository. The training procedure can be easily operated by `bash run.sh`.
@@ -62,7 +61,8 @@ python /home/code/main.py \
     --store-num 100 \  # number of stored data for knowledge review n
     --period 2  # review period p
 ```
-
+##### Performance on additional datasets
+We also evaluate the performance of the alternating optimization framework on COST2100. The scenarios of SemiUrban_LOS, SemiUrban_NLOS, and IndoorHall are utilized. The results on COST2100 can be found in COST2100.PNG in the 'results' directory.
 
 ## Acknowledgment
 
