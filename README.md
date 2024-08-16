@@ -38,7 +38,7 @@ home
 ```
 #### D. Key results reproduction
 
-We test the performance of the alternating optimization method on both the CDL channel datasets. The results are presented as follows. 
+We test the performance of the alternating optimization method on the CDL channel datasets. The results are presented as follows. 
 ##### Performance on the CDL dataset
 All the results can be found in Figure 5 of our paper, which is also attached as CDL.png in the 'results' directory.
 
