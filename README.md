@@ -62,7 +62,7 @@ python /home/code/main.py \
     --period 2  # review period p
 ```
 ##### Performance on additional datasets
-We also evaluate the performance of the alternating optimization framework on COST2100. The scenarios of SemiUrban_LOS, SemiUrban_NLOS, and IndoorHall are utilized. The results on COST2100 can be found in COST2100.PNG in the 'results' directory.
+We also evaluate the performance of the alternating optimization framework on COST2100. The scenarios of SemiUrban_LOS, SemiUrban_NLOS, and IndoorHall are utilized. The datasets can be generated according to the [open source library of COST2100](https://github.com/cost2100/cost2100). The training operation is similar to that on the CDL channel model. Finally, the results on COST2100 can be found in COST2100.PNG in the 'results' directory.
 
 ## Acknowledgment
 
