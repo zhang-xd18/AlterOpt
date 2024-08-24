@@ -15,7 +15,7 @@ The channel state information (CSI) matrix is generated from the [clustered dela
 
 
 #### B. Checkpoint and results downloading
-The pretrained checkpoint used for online updating is provided in the "codes/pretrained" diectory along with the repository.
+The pretrained checkpoint used for online updating is provided in the `codes/pretrained` diectory along with the repository.
 
 #### C. Project Tree Arrangement
 
@@ -41,7 +41,7 @@ home
 
 We test the performance of the alternating optimization method on the CDL channel datasets. The results are presented as follows. 
 ##### Performance on the CDL dataset
-All the results can be found in Figure 5 of our paper as follows, which is also attached as `CDL.png` in the 'results' directory.
+All the results can be found in Figure 5 of our paper as follows, which is also attached as `CDL.png` in the `results` directory.
 ![image](https://github.com/zhang-xd18/AlterOpt/blob/main/results/CDL.png)
 
 ##### Reproduction
@@ -64,7 +64,7 @@ python /home/code/main.py \
     --period 2  # review period p
 ```
 ##### Performance on additional datasets
-We also evaluate the performance of the alternating optimization framework on COST2100. The scenarios of SemiUrban_LOS, SemiUrban_NLOS, and IndoorHall are utilized. The datasets can be generated according to the [open source library of COST2100](https://github.com/cost2100/cost2100). The training settings are similar to that on the CDL channel model. The model is first sufficiently offline trained with the scenario of SemiUrban_LOS. Finally, the results on COST2100 can be found in `COST2100.png` in the 'results' directory.
+We also evaluate the performance of the alternating optimization framework on COST2100. The scenarios of SemiUrban_LOS, SemiUrban_NLOS, and IndoorHall are utilized. The datasets can be generated according to the [open source library of COST2100](https://github.com/cost2100/cost2100). The training settings are similar to that on the CDL channel model. The model is first sufficiently offline trained with the scenario of SemiUrban_LOS. Finally, the results on COST2100 can be found in `COST2100.png` in the `results` directory.
 
 ## Acknowledgment
 
