@@ -1,10 +1,10 @@
 GPU=0
 NAME=CRNet
-ROOT=/home/root/
-DATA_DIR=$ROOT/MagProject/Dataset/
-DIR=$ROOT/MagProject/results/
-PRETRAIN=$ROOT/MagProject/AlterOpt/pretrain/
-BATCHSIZE=200
+ROOT=/teams/ius_1663576043/zxd/MagProject/
+DATA_DIR=$ROOT/3GPP
+DIR=$ROOT/results/
+PRETRAIN=$ROOT/AlterOpt-main/code/pretrain/
+BATCHSIZE=100
 CR=4
 
 METHOD=Alter
@@ -13,7 +13,7 @@ STORE_NUM=100
 PERIOD=2
 SCENARIOS=CDADA
 
-python $ROOT/MagProject/AlterOpt/main.py \
+python $ROOT/AlterOpt-main/code/main.py \
     --epochs $EPOCH \
     --gpu $GPU \
     --root $DIR \
@@ -27,3 +27,4 @@ python $ROOT/MagProject/AlterOpt/main.py \
     --pretrained $PRETRAIN \
     --store-num $STORE_NUM \
     --period $PERIOD
+

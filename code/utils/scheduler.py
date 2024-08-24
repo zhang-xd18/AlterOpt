@@ -1,7 +1,7 @@
 import math
 from torch.optim.lr_scheduler import _LRScheduler
 
-__all__ = ['WarmUpCosineAnnealingLR', 'FakeLR', 'lamb_scheduler']
+__all__ = ['WarmUpCosineAnnealingLR', 'FakeLR']
 
 
 class WarmUpCosineAnnealingLR(_LRScheduler):
@@ -25,44 +25,3 @@ class FakeLR(_LRScheduler):
 
     def get_lr(self):
         return self.base_lrs
-
-
-class lamb_scheduler():
-    def __init__(self, lamb_init, lamb_end, type, T):
-        self.lamb_init = lamb_init
-        self.lamb_end = lamb_end
-        self.lamb_cur = lamb_init
-        self.T = T
-        self.type = type
-        self.cur = 0
-        
-        self.a = 1/(self.T) * math.log10(lamb_end/lamb_init)
-        self.b = math.log10(lamb_init)
-        
-        self.f = 2 * math.pi / self.T
-        self.A = self.lamb_init - self.lamb_end
-        self.B = (self.lamb_init + self.lamb_end)/2
-        
-    def init(self):
-        self.cur = 0
-        return 
-    
-    def get(self):
-        return self.lamb_cur
-        
-    def step(self):
-        if self.type == 'exp':
-            self.lamb_cur = 10**(self.a * self.cur + self.b)
-        elif self.type == 'cos':
-            self.lamb_cur = math.cos(self.f * self.cur) * self.A / 2 + self.B
-        elif self.type == 'cosh':
-            self.lamb_cur = math.cos(self.f * 2 * self.cur) * self.A / 2 + self.B
-        elif self.type == 'zero':
-            self.lamb_cur = 0
-        elif self.type == 'segment':
-            if self.cur < self.T / 2:
-                self.lamb_cur = 0
-            else:
-                self.lamb_cur = self.lamb_init
-        self.cur += 1
-        return 

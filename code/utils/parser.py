@@ -49,7 +49,7 @@ parser.add_argument('--root', type=str, default='./', help='checkpoint save root
 parser.add_argument('--method', type=str, default='Alter',
                     help='scenario transferring method')
 
-parser.add_argument('--scenarios', type=str, default="ABCDE",
+parser.add_argument('--scenarios', type=str, default="CDADA",
                     help='transferring scenarios')
 
 parser.add_argument('--store-num', type=int, default=50, metavar='N',
