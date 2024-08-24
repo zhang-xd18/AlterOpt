@@ -15,7 +15,7 @@ The channel state information (CSI) matrix is generated from the [clustered dela
 
 
 #### B. Checkpoint and results downloading
-The pretrained checkpoint used for online updating is provided in the `codes/pretrained` diectory along with the repository.
+The pretrained checkpoint used for online updating is provided in the `code/pretrain` directory along with the repository.
 
 #### C. Project Tree Arrangement
 
@@ -25,16 +25,18 @@ We recommend you to arrange the project tree as follows.
 home
 ├── code  # The cloned current repository
 │   ├── dataset
-|   ├── pretrained # The checkpoints folder
+|   ├── pretrain # The checkpoints folder
 |   |   ├── best_after_C.pth
 |   |   ├── ...
 │   ├── models
 │   ├── utils
+│   ├── methods
 │   ├── main.py
 |   ├── run.sh  # The bash script
 ├── data  # CDL dataset generated following section A
 │   ├── DATA_HtestA.mat
 │   ├── ...
+├── results  # store the training results
 ...
 ```
 #### D. Key results reproduction
