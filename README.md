@@ -41,7 +41,8 @@ home
 
 We test the performance of the alternating optimization method on the CDL channel datasets. The results are presented as follows. 
 ##### Performance on the CDL dataset
-All the results can be found in Figure 5 of our paper, which is also attached as CDL.png in the 'results' directory.
+All the results can be found in Figure 5 of our paper as follows, which is also attached as CDL.png in the 'results' directory.
+![image](https://github.com/zhang-xd18/AlterOpt/tree/main/results/CDl.png)
 
 ##### Reproduction
 Before training the network, you need to arrange the dataset as abovementioned. After that, an example of `run.sh` is provided in the repository. The training procedure can be easily operated by `bash run.sh`.
