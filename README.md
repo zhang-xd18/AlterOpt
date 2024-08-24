@@ -36,7 +36,7 @@ home
 ├── data  # CDL dataset generated following section A
 │   ├── DATA_HtestA.mat
 │   ├── ...
-├── results  # store the training results
+├── results  # Store the training results
 ...
 ```
 #### D. Key results reproduction
