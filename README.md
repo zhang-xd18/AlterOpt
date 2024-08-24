@@ -4,14 +4,15 @@ This is a PyTorch implementation for the paper "Practical Deployment for Deep Le
 ## Requirements
 
 The following requirements need to be installed.
-- Python == 3.9
-- [PyTorch == 1.10.0](https://pytorch.org/get-started/previous-versions/#v1100)
+- Python >= 3.8
+- [PyTorch == 1.13.0](https://pytorch.org/get-started/previous-versions/#v1130)
 
 ## Project Preparation
 
 #### A. Data Preparation
 
-The channel state information (CSI) matrix is generated from the [clustered delay line (CDL)](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3173) model and settings can be found in our paper.  
+The channel state information (CSI) matrix is generated from the [clustered delay line (CDL)](https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3173) model and detailed settings can be found in our paper. On the other hand, we provide a preprocessed dataset, which can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1yLzVBFR5rv3C_ym0PpDAnLyPOW5hiiCt?usp=sharing).
+
 
 #### B. Checkpoint and results downloading
 The pretrained checkpoint used for online updating is provided in the "codes/pretrained" diectory along with the repository.
