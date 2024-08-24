@@ -47,7 +47,7 @@ All the results can be found in Figure 5 of our paper as follows, which is also 
 ![image](https://github.com/zhang-xd18/AlterOpt/blob/main/results/CDL.png)
 
 ##### Reproduction
-Before training the network, you need to arrange the dataset as abovementioned. After that, an example of `run.sh` is provided in the repository. The training procedure can be easily operated by `bash run.sh`.
+Before training the network, you need to arrange the dataset as abovementioned. After that, an example of `run.sh` is provided in the repository. The training procedure can be easily operated by `bash run.sh` after adjusting the file paths.
 
 ``` bash
 python /home/code/main.py \
