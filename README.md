@@ -65,8 +65,20 @@ python /home/code/main.py \
     --store-num 100 \  # number of stored data for knowledge review n
     --period 2  # review period p
 ```
-##### Performance on additional datasets
-We also evaluate the performance of the alternating optimization framework on COST2100. The scenarios of SemiUrban_LOS, SemiUrban_NLOS, and IndoorHall are utilized. The datasets can be generated according to the [open source library of COST2100](https://github.com/cost2100/cost2100). The training settings are similar to that on the CDL channel model. The model is first sufficiently offline trained with the scenario of SemiUrban_LOS. Finally, the results on COST2100 can be found in `COST2100.png` in the `results` directory.
+##### Ablation studies on additional datasets
+###### Experiments on COST2100
+We also evaluate the performance of the alternating optimization framework on COST2100. The scenarios of SemiUrban_LOS (SemiUrban scenario with LOS paths, working frequency of 300MHz), SemiUrban_NLOS (SemiUrban scenario with no LOS paths, working frequency of 300 MHz), and IndoorHall (IndoorHall scenario with LOS paths, working frequency of 5GHz) are utilized. The datasets can be generated according to the [open source library of COST2100](https://github.com/cost2100/cost2100). 
+The training settings are similar to that on the CDL channel model. The model is first sufficiently offline trained with the scenario of SemiUrban_LOS, achieving an NMSE of -8.996 dB after 2,500 epochs of training with 50,000 samples. After deployment, only 200 epochs of online updating and 50 epochs of knowledge review are conducted. Finally, the results on COST2100 can be found in `COST2100.png` in the `results` directory.
+
+It can be seen that our proposed AO method can achieve more stable performances than OTL during scenario switching. Besides, with a smaller period p, the AO can achieve more stable performance over different scenarios.
+
+###### Experiments on channel model switch
+We also explore the performance of the alternating optimization framework on variations among different channel models. We utilize the COST2100 and CDL channel models. For the COST2100 channel model, we use the IndoorHall scenario with LOS paths working on 5GHz. For the CDL channel model, we consider the CDL-A scenario. 
+The model is initially trained offline under the CDL-C scenario of CDL channel model, with -17.76dB of NMSE on CDL-C.
+During online updating, only 2,500 samples are collected for 200 epochs of online updating. For knowledge review, only 50 epochs are conducted.
+The results of channel model switch can be found in `Model_change.png` in the `results` directory.
+
+It can be seen that with knowledge review on previous channel models, our proposed AO framework can maintain more stable and effective performance compared to OTL, demonstrating a higher generalization ability.
 
 ## Acknowledgment
 
