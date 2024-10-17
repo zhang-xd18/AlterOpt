@@ -1,3 +1,5 @@
+''' proposed alternating optimization framework
+'''
 import time
 import os
 import torch
@@ -9,7 +11,7 @@ from copy import deepcopy
 __all__ = ['Alter']
 
 class Alter:
-    r""" The online training pipeline for encoder-decoder architecture
+    r""" proposed alternating optimization framework
     """
     def __init__(self, model, device, optimizer, scheduler, save_path='./checkpoint', print_freq=20, test_freq=1):
 
@@ -21,23 +23,19 @@ class Alter:
         self.add_scheduler = None
         self.add_train = False
         self.device = device
-        
-        # control parameters importances
         self.mse = torch.nn.MSELoss()
         self.best_model = None
         self.best_epoch = None
         
-        # Verbose arguments
+
+        # Pipeline arguments
         self.save_path = save_path
         self.print_freq = print_freq
         self.test_freq = test_freq
-
-        # Pipeline arguments
         self.cur_epoch = 1
         self.all_epoch = None
         self.train_loss = None
         self.test_loss = None
-
         self.test_loader = None
         self.test_nmse = []
 
