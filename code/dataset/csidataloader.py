@@ -14,7 +14,7 @@ class CSIDataLoader(object):
         print(scenario)
         assert os.path.isdir(root)
         self.batch_size = batch_size
-        self.batch_tiny_size = batch_size // 5  # batchsize for online updating
+        self.batch_tiny_size = batch_size // 5  # batchsize for online updating, can be adjusted accordingly
         self.num_workers = num_workers
         self.pin_memory = False
     
@@ -27,7 +27,7 @@ class CSIDataLoader(object):
         data_train = torch.tensor(data_train, dtype=torch.float32).view(
             data_train.shape[0], channel, nt, nc).to(device)
         self.train_dataset = TensorDataset(data_train)
-        self.train_tiny_dataset = TensorDataset(data_train[0:data_train.shape[0] // 10, :, :, :])    # tiny dataset for online updating, only 1/10 scale of the offline training dataset
+        self.train_tiny_dataset = TensorDataset(data_train[0:data_train.shape[0] // 10, :, :, :])    # tiny dataset for online updating, only 1/10 scale of the offline training dataset, can be adjusted accordingly
         
         # Testing data loading
         data_test = sio.loadmat(dir_test)['HT']
