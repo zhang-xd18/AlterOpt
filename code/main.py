@@ -8,6 +8,7 @@ from datetime import datetime
 import os
 
 def init_dir():
+    # initial result directory
     dir_name = 'cr{}-n{}-p{}-ep{}'.format(args.cr, args.store_num, args.period, args.epochs)
     if args.debug:
         save_path = os.path.join(args.root, 'debug', args.method, args.scenarios, dir_name)
@@ -47,7 +48,8 @@ def main():
     train_loader_list = []
     test_loader_list = []
     train_tiny_loader_list = []
-    
+
+    # loading data
     for i in range(n):
         train_loader, train_tiny_loader, test_loader = CSIDataLoader(
             root=args.data_dir,
@@ -59,14 +61,14 @@ def main():
         train_tiny_loader_list.append(train_tiny_loader)
         test_loader_list.append(test_loader)
     
-    # Define optimizer and scheduler
+    # define optimizer and scheduler
     lr_init = 1e-3 if args.scheduler == 'const' else 2e-3
     optimizer = torch.optim.Adam(model.parameters(), lr_init)
     scheduler = FakeLR(optimizer=optimizer)
     
     
     # define the training strategy
-    if args.method == 'Alter':
+    if args.method == 'Alter': # choose 'Alter' for the Alternating optimization framework
         from methods.alter import Alter as Trainer      
         period = args.period   
         store_data = torch.zeros(args.store_num * 2, 2, 32, 32).to(device)  # store the newest two scenarios for knowledge review
