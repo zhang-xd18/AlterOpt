@@ -1,5 +1,5 @@
 ## Overview
-This is a PyTorch implementation for the paper "Practical Deployment for Deep Learning-based CSI Feedback Systems: Generalization Challenges and Enabling Techniques", which has been submitted to IEEE for possible publication.
+This is a PyTorch implementation for the paper "[Practical Deployment for Deep Learning-based CSI Feedback Systems: Generalization Challenges and Enabling Techniques](https://ieeexplore.ieee.org/abstract/document/10924686)".
 
 ## Requirements
 
